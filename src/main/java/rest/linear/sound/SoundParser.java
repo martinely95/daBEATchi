@@ -1,14 +1,17 @@
 package rest.linear.sound;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Synthesizer;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
+
+/**
+ * Receives information for channels and values for notes to be played and plays everything.
+ */
 public class SoundParser {
 
 	private static final int TIME_IN_MILISECONDS = 190;
@@ -27,7 +30,7 @@ public class SoundParser {
 		int index = 0;
 		Map<Integer,MidiChannel> colChannels = new HashMap<>();
 		System.out.println(colChannels.size());
-		Map<Integer, Integer> notes = new HashMap<>();
+//		Map<Integer, Integer> notes = new HashMap<>();
 		
 		for(int color : map.keySet()){
 			colChannels.put(color, channels[index]);
@@ -35,7 +38,7 @@ public class SoundParser {
 			index++;
 		}
 		
-		index = 0;
+//		index = 0;
 		for (int cols = 0; cols < tmp[0].length; cols++) {
 			for (int row = 0; row < tmp.length; row++) {
 				for(int color : colChannels.keySet())
@@ -49,8 +52,8 @@ public class SoundParser {
 				}
 			}
 			Thread.sleep(TIME_IN_MILISECONDS);
-			notes.clear();
-			index = 0;
+//			notes.clear();
+//			index = 0;
 		}
 		colChannels.clear();
 	}
