@@ -1,6 +1,5 @@
 package martin.ui;
 
-import main.java.Tone;
 import martin.Tone;
 
 import javax.swing.*;
